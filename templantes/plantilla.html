@@ -5,41 +5,94 @@
     <title>Generador de Contraseñas</title>
     <style>
         body {
-            background: {{ color }};
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             font-family: {{ fuente }}, sans-serif;
             color: #fff;
-            padding: 2em;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .formulario {
-            background: rgba(0,0,0,0.2);
-            padding: 2em;
-            border-radius: 10px;
-            max-width: 400px;
-            margin: auto;
-        }
-        label, input, select {
-            display: block;
-            margin-bottom: 1em;
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+            padding: 2.5em 2em;
+            max-width: 420px;
             width: 100%;
+            margin: 2em auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5em;
+            font-size: 2em;
+            letter-spacing: 1px;
+            color: #ffd700;
+            text-shadow: 1px 1px 8px #222;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 0.3em;
+            color: #ffd700;
+        }
+        input, select {
+            display: block;
+            margin-bottom: 1.2em;
+            width: 100%;
+            padding: 0.7em;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            background: rgba(255,255,255,0.15);
+            color: #222;
+        }
+        input[type="color"] {
+            padding: 0.2em;
+            height: 2.5em;
         }
         button {
-            background: #4CAF50;
-            color: white;
+            background: linear-gradient(90deg, #ffd700 0%, #ff9800 100%);
+            color: #222;
             border: none;
             padding: 1em;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #ff9800 0%, #ffd700 100%);
         }
         .resultado {
             margin-top: 2em;
-            background: #333;
-            padding: 1em;
-            border-radius: 5px;
+            background: rgba(255,255,255,0.15);
+            padding: 1.5em;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            color: #fff;
+        }
+        .resultado ul {
+            padding-left: 1.2em;
+        }
+        .resultado li {
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 0.4em 0.8em;
+            color: #ffd700;
+            font-family: 'Courier New', Courier, monospace;
         }
     </style>
 </head>
 <body>
     <div class="formulario">
+        <h2>Generador de Contraseñas Seguras</h2>
         <form method="POST">
             <label for="dni">DNI:</label>
             <input type="text" id="dni" name="dni" required>
